@@ -4,4 +4,9 @@ function playSoundPom(){
 
 const teclaList = document.querySelectorAll('.tecla')
 
-teclaList[0].onclick = playSoundPom
+let conter = 0
+
+while (conter < teclaList.length){
+    teclaList[conter].onclick = playSoundPom
+    conter ++
+}
