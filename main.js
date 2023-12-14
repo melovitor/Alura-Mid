@@ -1,5 +1,5 @@
-function playSoundPom(){
-    document.querySelector('#som_tecla_pom').play()
+function playSounds(idAudio){
+    document.querySelector(idAudio).play()
 }
 
 const teclaList = document.querySelectorAll('.tecla')
@@ -7,6 +7,12 @@ const teclaList = document.querySelectorAll('.tecla')
 let conter = 0
 
 while (conter < teclaList.length){
-    teclaList[conter].onclick = playSoundPom
+    const key =  teclaList[conter]
+    const instrument = key.classList[1]
+    const idAudio = `#som_${instrument}`
+
+    key.onclick = () => {
+        playSounds(idAudio)
+    }
     conter ++
 }
