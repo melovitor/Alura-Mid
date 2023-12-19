@@ -14,4 +14,16 @@ for (let conter = 0; conter < teclaList.length; conter ++){
         playSounds(idAudio)
     }
 
+    key.onkeydown = (e) => {
+        if( e.code === 'Enter' || e.code === 'Space'){
+            key.classList.add('ativa')
+        }
+    }
+
+    key.onkeyup = (e) => {
+        if( e.code === 'Enter' || e.code === 'Space'){
+            key.classList.remove('ativa')
+        }
+    }
+
 }
