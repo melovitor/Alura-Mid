@@ -1,5 +1,12 @@
 function playSounds(idAudio){
-    document.querySelector(idAudio).play()
+    const element = document.querySelector(idAudio)
+
+    if ( element && element.localName === 'audio' ) {  
+        element.play()
+    } else {
+        console.log('Elemento não encontrado')
+    }
+
 }
 
 const teclaList = document.querySelectorAll('.tecla')
@@ -15,13 +22,13 @@ for (let conter = 0; conter < teclaList.length; conter ++){
     }
 
     key.onkeydown = (e) => {
-        if( e.code === 'Enter' || e.code === 'Space'){
+        if ( e.code === 'Enter' || e.code === 'Space' ) {
             key.classList.add('ativa')
         }
     }
 
     key.onkeyup = (e) => {
-        if( e.code === 'Enter' || e.code === 'Space'){
+        if ( e.code === 'Enter' || e.code === 'Space' ) {
             key.classList.remove('ativa')
         }
     }
